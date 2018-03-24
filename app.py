@@ -84,8 +84,39 @@ def processRequest(req):
             "source": "apiai-weather-webhook-sample"
         }    
         return res
+    elif req.get("result").get("action") == "Start_collage":
+        
+        res = makeWebhookCollage(req)
+        return res
     return {}
 #########################################
+def makeWebhookCollage(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    #city = parameters.get("geo-city")	
+	
+
+    degree = parameters.get("degree")
+    major = parameters.get("major")
+    state = parameters.get("state")
+    #if city is None:
+        #return None
+
+    return {
+            "speech": "you want top Five collage about" + parameters.get("degree") "of"+ parameters.get("major") "in" + \
+                        state = parameters.get("state") ",here are them:"\
+                          "1.george mason university" \
+                          "2.george mason university" \
+                          "3.george mason university" \
+                          "4.george mason university" \
+                          "5.george mason university",
+            "displayText": "you get this right",
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
+        } 
+
+#######################################
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
