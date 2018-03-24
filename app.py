@@ -95,9 +95,9 @@ def makeWebhookCollage(req):
     #city = parameters.get("geo-city")	
 	
 
-    #degree = parameters.get("degree")
-    #major = parameters.get("major")
-    #state = parameters.get("state")
+    degree = parameters.get("degree")
+    major = parameters.get("major")
+    state = parameters.get("state")
     #if city is None:
         #return None
     #speech1 = "you want top Five collage about" + parameters.get("degree") " of " + parameters.get("major") "in" + state = parameters.get("state") "here are them:" 
