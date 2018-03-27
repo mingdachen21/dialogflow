@@ -48,19 +48,6 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-
-def processRequest__1(req):
-    if req.get("result").get("action") != "yahooWeatherForecast":
-        return {}
-    baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    yql_query = makeYqlQuery(req)
-    if yql_query is None:
-        return {}
-    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
-    res = makeWebhookResult(data)
-    return res
 ###################################
 def processRequest(req):
     if req.get("result").get("action") == "yahooWeatherForecast":
@@ -100,7 +87,7 @@ def makeWebhookCollage(req):
     state = parameters.get("state")
     #if city is None:
         #return None
-    #speech1 = "you want top Five collage about" + parameters.get("degree") " of " + parameters.get("major") "in" + state = parameters.get("state") "here are them:" 
+    speech1 = "you want top Five collage about" +degree + major + state"here are them:" 
     speech2 = "1.george mason university" +\
                          "2.george mason university" +\
                          "3.george mason university" +\
@@ -108,7 +95,7 @@ def makeWebhookCollage(req):
                          "5.george mason university"                   
            
     return {
-       "speech": speech2,
+       "speech": speech1 + speech2,
        "displayText": "you get this right",
        # "data": data,
        # "contextOut": [],
