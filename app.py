@@ -79,21 +79,16 @@ def processRequest(req):
 def makeWebhookCollage(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    #city = parameters.get("geo-city")	
-	
-
+    #city = parameters.get("geo-city")
     degree = parameters.get("degree")
     major = parameters.get("major")
     state = parameters.get("state")
     #if city is None:
         #return None
-    speech1 = "you want top Five collage about" +degree + major + state"here are them:" 
-    speech2 = "1.george mason university" +\
-                         "2.george mason university" +\
-                         "3.george mason university" +\
-                         "4.george mason university" +\
-                         "5.george mason university"                   
-           
+    speech1 =  degree + major + state
+    speech2 = "1.george mason university" 
+    print(speech1)
+    print(speech2)
     return {
        "speech": speech1 + speech2,
        "displayText": "you get this right",
