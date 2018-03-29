@@ -86,7 +86,7 @@ def makeWebhookCollage(req):
     state = parameters.get("state")
     #if city is None:
         #return None
-    #data = pd.read_csv("data_test.csv",header = 0)
+    data = pd.read_csv("data_test.csv",header = 0)
     #data1 = data.groupby(['state']).get_group(state)
     #data2 = data1.groupby(['degree']).get_group(degree)
     #data3 = data2.sort_values([major])
