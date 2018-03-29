@@ -98,7 +98,7 @@ def makeWebhookCollage(req):
     #     "4." + data3['University Name'].iloc[4] +'\n'+\
     #     "5." + data3['University Name'].iloc[5]
     
-    speech2 = "1.george mason university" +degree + major + state +data3['University Name'].iloc[1]
+    speech2 = "1.george mason university" +degree + major + state 
     
     print(speech2)
     return {
