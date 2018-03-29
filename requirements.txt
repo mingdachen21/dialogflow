@@ -1,4 +1,4 @@
 Flask==0.10.1
 future==0.16.0
-pip install numpy==1.6.2
+numpy==1.9.1
 pandas==0.8.1
