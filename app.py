@@ -86,13 +86,12 @@ def makeWebhookCollage(req):
     state = parameters.get("state")
     #if city is None:
         #return None
-    data = pd.read_csv("data_test.csv",header = 0)
-    data1 = data.groupby(['state']).get_group(state)
-    data2 = data1.groupby(['degree']).get_group(degree)
-    data3 = data2.sort_values([major])
+    #data = pd.read_csv("data_test.csv",header = 0)
+    #data1 = data.groupby(['state']).get_group(state)
+    #data2 = data1.groupby(['degree']).get_group(degree)
+    #data3 = data2.sort_values([major])
     
-    print(data3.head(5))
-    speech1 = "the top 5 university for you:" + '\n' +\
+    #speech1 = "the top 5 university for you:" + '\n' +\
          "1." + data3['University Name'].iloc[1] +'\n'+\
          "2." + data3['University Name'].iloc[2] +'\n'+\
          "3." + data3['University Name'].iloc[3] +'\n'+\
@@ -100,10 +99,10 @@ def makeWebhookCollage(req):
          "5." + data3['University Name'].iloc[5]
     
     speech2 = "1.george mason university" 
-    print(speech1)
+    #print(speech1)
     print(speech2)
     return {
-       "speech": speech1 + speech2,
+       "speech": speech2,
        "displayText": "you get this right",
        # "data": data,
        # "contextOut": [],
