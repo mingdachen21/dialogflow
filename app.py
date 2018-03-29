@@ -92,11 +92,11 @@ def makeWebhookCollage(req):
     #data3 = data2.sort_values([major])
     
     #speech1 = "the top 5 university for you:" + '\n' +\
-         "1." + data3['University Name'].iloc[1] +'\n'+\
-         "2." + data3['University Name'].iloc[2] +'\n'+\
-         "3." + data3['University Name'].iloc[3] +'\n'+\
-         "4." + data3['University Name'].iloc[4] +'\n'+\
-         "5." + data3['University Name'].iloc[5]
+    #     "1." + data3['University Name'].iloc[1] +'\n'+\
+    #     "2." + data3['University Name'].iloc[2] +'\n'+\
+    #     "3." + data3['University Name'].iloc[3] +'\n'+\
+    #     "4." + data3['University Name'].iloc[4] +'\n'+\
+    #     "5." + data3['University Name'].iloc[5]
     
     speech2 = "1.george mason university" 
     #print(speech1)
