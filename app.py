@@ -102,7 +102,7 @@ def makeWebhookCollage(req):
     
     print(speech2)
     return {
-       "speech":  speech2,speech1
+       "speech":  speech2+speech1,
        "displayText": "you get this right",
        # "data": data,
        # "contextOut": [],
