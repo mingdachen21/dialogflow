@@ -121,12 +121,16 @@ def makeWebhookCollage(req):
     No4 = data3['University Name'].iloc[4]
     No5 = data3['University Name'].iloc[5]
     
-    
-    speech2 = "1.george mason university" + degree + major + state 
-    
-    print(speech2)
+    #speech2 = "1.george mason university" + degree + major + state 
+    speech = "the top 5 university for you:" + '\n' +\
+         "1." + No1 +'\n'+\
+         "2." + No2 +'\n'+\
+         "3." + No3 +'\n'+\
+         "4." + No4 +'\n'+\
+         "5." + No5
+    print(speech)
     return {
-       "speech":  speech2+No1+No2+No3+No4+No5 ,
+       "speech":  speech ,
        "displayText": No1,
        # "data": data,
        # "contextOut": [],
