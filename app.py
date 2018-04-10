@@ -129,7 +129,7 @@ def makeWebhookCollage(req):
     print(speech2)
     return {
        "speech":  speech2 ,
-       "displayText": "maybe here wrong",
+       "displayText": data,
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
