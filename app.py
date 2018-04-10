@@ -112,6 +112,7 @@ def makeWebhookCollage(req):
     #if city is None:
         #return None
     data = data_collage
+    Tvv = data['University Name'].iloc[1]
     #data1 = data.groupby(['state']).get_group("VA")
     #data2 = data1.groupby(['degree']).get_group("Phd")
     #data3 = data2.sort_values(["Business"])
@@ -129,7 +130,7 @@ def makeWebhookCollage(req):
     print(speech2)
     return {
        "speech":  speech2 ,
-       "displayText": data,
+       "displayText": Tvv,
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
