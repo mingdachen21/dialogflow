@@ -117,7 +117,7 @@ def makeWebhookCollage(req):
     data3 = data2.sort_values(["Business"])
     
     
-    speech1 = "the top 5 university for you:"  + \
+    #speech1 = "the top 5 university for you:"  + \
         "1." + data3['University Name'].iloc[1] + \        
         "2." + data3['University Name'].iloc[2] + \
         "3." + data3['University Name'].iloc[3] + \
@@ -129,7 +129,7 @@ def makeWebhookCollage(req):
     print(speech2)
     return {
        "speech":  speech2 ,
-       "displayText": speech2,
+       "displayText": "maybe here wrong",
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
