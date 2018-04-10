@@ -123,10 +123,10 @@ def makeWebhookCollage(req):
     
     #speech2 = "1.george mason university" + degree + major + state 
     speech = "the top 5 university for you:" + '          ' +\
-         "1." + No1 +'          '+\
-         "2." + No2 +'          '+\
-         "3." + No3 +'          '+\
-         "4." + No4 +'          '+\
+         "1." + No1 +"          "+\
+         "2." + No2 +"          "+\
+         "3." + No3 +"          "+\
+         "4." + No4 +"          "+\
          "5." + No5
     print(speech)
     return {
