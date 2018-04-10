@@ -118,11 +118,11 @@ def makeWebhookCollage(req):
     
     
     #speech1 = "the top 5 university for you:"  + \
-        "1." + data3['University Name'].iloc[1] + \        
-        "2." + data3['University Name'].iloc[2] + \
-        "3." + data3['University Name'].iloc[3] + \
-        "4." + data3['University Name'].iloc[4] + \
-        "5." + data3['University Name'].iloc[5]
+   #     "1." + data3['University Name'].iloc[1] + \        
+    #    "2." + data3['University Name'].iloc[2] + \
+     #   "3." + data3['University Name'].iloc[3] + \
+     #   "4." + data3['University Name'].iloc[4] + \
+     #   "5." + data3['University Name'].iloc[5]
     
     speech2 = "1.george mason university" + degree + major + state 
     
