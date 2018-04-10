@@ -112,9 +112,9 @@ def makeWebhookCollage(req):
     #if city is None:
         #return None
     data = data_collage
-    data1 = data.groupby(['state']).get_group("VA")
-    data2 = data1.groupby(['degree']).get_group("Phd")
-    data3 = data2.sort_values(["Business"])
+    #data1 = data.groupby(['state']).get_group("VA")
+    #data2 = data1.groupby(['degree']).get_group("Phd")
+    #data3 = data2.sort_values(["Business"])
     
     
     #speech1 = "the top 5 university for you:"  + \
