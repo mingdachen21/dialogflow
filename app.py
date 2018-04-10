@@ -112,9 +112,9 @@ def makeWebhookCollage(req):
     #if city is None:
         #return None
     data = data_collage
-    data1 = data.groupby(['state']).get_group("VA")
-    data2 = data1.groupby(['degree']).get_group("Phd")
-    data3 = data2.sort_values(by = ['Business'])
+    data1 = data.groupby(['state']).get_group(state)
+    data2 = data1.groupby(['degree']).get_group(degree)
+    data3 = data2.sort_values(by = [major])
     No1 = data3['University Name'].iloc[1]
     No2 = data3['University Name'].iloc[2]
     No3 = data3['University Name'].iloc[3]
