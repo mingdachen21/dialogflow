@@ -106,7 +106,6 @@ def processRequest(req):
 def makeWebhookCollage(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    #city = parameters.get("geo-city")
     degree = parameters.get("degree")
     major = parameters.get("major")
     state = parameters.get("state")
@@ -116,20 +115,22 @@ def makeWebhookCollage(req):
     data1 = data.groupby(['state']).get_group("VA")
     data2 = data1.groupby(['degree']).get_group("Phd")
     data3 = data2.sort_values(["Business"])
+    if data3 is None:
+        return{}
     
-    speech1 = "the top 5 university for you:" + '\n' +\
-         "1." + data3['University Name'].iloc[1] +'\n'+\
-         "2." + data3['University Name'].iloc[2] +'\n'+\
-         "3." + data3['University Name'].iloc[3] +'\n'+\
-         "4." + data3['University Name'].iloc[4] +'\n'+\
-         "5." + data3['University Name'].iloc[5]
+    speech1 = "the top 5 university for you:"  + \
+        "1." + data3['University Name'].iloc[1] + \        
+        "2." + data3['University Name'].iloc[2] + \
+        "3." + data3['University Name'].iloc[3] + \
+        "4." + data3['University Name'].iloc[4] + \
+        "5." + data3['University Name'].iloc[5]
     
-    speech2 = "1.george mason university" +degree + major + state 
+    speech2 = "1.george mason university" + degree + major + state 
     
     print(speech2)
     return {
-       "speech":  speech2+speech1,
-       "displayText": "you get this right",
+       "speech":  speech2 ,
+       "displayText": speech2,
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
@@ -172,7 +173,7 @@ def makeWebhookResult(data):
     # print(json.dumps(item, indent=4))
 
     speech = "Today the weather in " + location.get('city') + ": " + condition.get('text') + \
-             ", And the temperature is " + condition.get('temp') + " " + units.get('temperature')
+    ", And the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
     print("Response:")
     print(speech)
