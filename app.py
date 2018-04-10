@@ -115,8 +115,7 @@ def makeWebhookCollage(req):
     data1 = data.groupby(['state']).get_group("VA")
     data2 = data1.groupby(['degree']).get_group("Phd")
     data3 = data2.sort_values(["Business"])
-    if data3 is None:
-        return{}
+    
     
     speech1 = "the top 5 university for you:"  + \
         "1." + data3['University Name'].iloc[1] + \        
