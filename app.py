@@ -129,8 +129,31 @@ def makeWebhookCollage_sport(req):
     data1 = data.groupby(['State']).get_group(State)
     data2 = data1.groupby(['Sport']).get_group(Sport)
     data3 = data2.sort_values(by = [Gender])
+    while True:
+    try:
+        No1 = data3['University'].iloc[0]
+        pass    
+    except IndexError :
+        No1 = "there is no university"
+        No2 = {}
+        No3 = {}
+        break
+    try:
+        No2 = data3['University'].iloc[1]
+        pass
+    except IndexError :
+        No2 = "there is no 2th university"
+        No3 = {}
+        break
+    try:
+        No3 = data3['University'].iloc[2]
+        break
+    except IndexError :
+        No3 = "there is no 3th university"
+        break
+    speech = State+Sport+Gender
     return {
-       "speech":  'speech' ,
+       "speech":  speech ,
        "displayText": 'No1',
        # "data": data,
        # "contextOut": [],
