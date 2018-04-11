@@ -125,7 +125,10 @@ def makeWebhookCollage_sport(req):
     Gender = parameters.get("Gender")
     Sport = parameters.get("Sport")
     State = parameters.get("State")
-    
+    data = data_Sport
+    data1 = data.groupby(['State']).get_group(State)
+    data2 = data1.groupby(['Sport']).get_group(Sport)
+    data3 = data2.sort_values(by = [Gender])
     return {
        "speech":  'speech' ,
        "displayText": 'No1',
