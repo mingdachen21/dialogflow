@@ -114,7 +114,24 @@ def processRequest(req):
     elif req.get("result").get("action") == "Start_collage":
         res = makeWebhookCollage(req)
         return res
+    elif req.get("result").get("action") == "Sport_collage":
+        res = makeWebhookCollage_sport(req)
+        return res
     return {}
+#########################################
+def makeWebhookCollage_sport(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    degree = parameters.get("degree")
+    major = parameters.get("major")
+    state = parameters.get("state")
+    return {
+       "speech":  'speech' ,
+       "displayText": 'No1',
+       # "data": data,
+       # "contextOut": [],
+       "source": "apiai-weather-webhook-sample"
+    }
 #########################################
 def makeWebhookCollage(req):
     result = req.get("result")
