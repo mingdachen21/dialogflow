@@ -114,7 +114,27 @@ def processRequest(req):
     elif req.get("result").get("action") == "Start_collage":
         res = makeWebhookCollage(req)
         return res
+    elif req.get("result").get("action") == "Sport_collage":
+        res = makeWebhookCollage_sport(req)
+        return res
     return {}
+###########################################
+def makeWebhookCollage_sport(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    Sport = parameters.get("Sport")
+    Gender = parameters.get("Gender")
+    State = parameters.get("State")
+    #if city is None:
+        #return None
+    data = data_Sport
+    data1 = data.groupby(['State']).get_group(State)
+    data2 = data1.groupby(['Sport']).get_group(Sport)
+    data3 = data2.sort_values(by = [Gender])
+    No1 = data3['University'].iloc[1]
+    No2 = data3['University'].iloc[2]
+    No3 = data3['University'].iloc[3]
+    
 #########################################
 def makeWebhookCollage(req):
     result = req.get("result")
