@@ -133,8 +133,8 @@ def makeWebhookCollage_sport(req):
    
     speech = State+Sport+Gender
     return {
-       "speech":  speech ,
-       "displayText": No1,
+       "speech":  No1 ,
+       "displayText": speech,
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
