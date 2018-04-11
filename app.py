@@ -122,9 +122,10 @@ def processRequest(req):
 def makeWebhookCollage_sport(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    degree = parameters.get("degree")
-    major = parameters.get("major")
-    state = parameters.get("state")
+    Gender = parameters.get("Gender")
+    Sport = parameters.get("Sport")
+    State = parameters.get("State")
+    
     return {
        "speech":  'speech' ,
        "displayText": 'No1',
