@@ -119,14 +119,12 @@ def processRequest(req):
         return res
     return {}
 ###########################################
-def makeWebhookCollage_sport(req):
+#def makeWebhookCollage_sport(req):
     result = req.get("result")
     parameters = result.get("parameters")
     Sport = parameters.get("Sport")
     Gender = parameters.get("Gender")
     State = parameters.get("State")
-    #if city is None:
-        #return None
     data = data_Sport
     data1 = data.groupby(['State']).get_group(State)
     data2 = data1.groupby(['Sport']).get_group(Sport)
