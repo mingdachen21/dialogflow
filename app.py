@@ -131,10 +131,41 @@ def makeWebhookCollage_sport(req):
     data1 = data.groupby(['State']).get_group(State)
     data2 = data1.groupby(['Sport']).get_group(Sport)
     data3 = data2.sort_values(by = [Gender])
-    No1 = data3['University'].iloc[1]
-    No2 = data3['University'].iloc[2]
-    No3 = data3['University'].iloc[3]
-    
+    while True:
+        try:
+            No1 = data3['University'].iloc[0]
+            pass    
+        except IndexError :
+            No1 = "there is no university"
+            No2 = {}
+            No3 = {}
+            break
+        try:
+            No2 = data3['University'].iloc[1]
+            pass
+        except IndexError :
+            No2 = "there is no 2th university"
+            No3 = {}
+            break
+        try:
+            No3 = data3['University'].iloc[2]
+            break
+        except IndexError :
+            No3 = "there is no 3th university"
+            break
+    speech = "the top Sport University for you:" +\
+        "No1. "+ No1 +\
+        "No2. "+ No2 +\
+        "No3. "+ No3 
+        print(speech)
+    return {
+       "speech":  speech ,
+       "displayText": No1,
+       # "data": data,
+       # "contextOut": [],
+       "source": "apiai-weather-webhook-sample"
+    }
+
 #########################################
 def makeWebhookCollage(req):
     result = req.get("result")
@@ -148,11 +179,11 @@ def makeWebhookCollage(req):
     data1 = data.groupby(['state']).get_group(state)
     data2 = data1.groupby(['degree']).get_group(degree)
     data3 = data2.sort_values(by = [major])
-    No1 = data3['University Name'].iloc[1]
-    No2 = data3['University Name'].iloc[2]
-    No3 = data3['University Name'].iloc[3]
-    No4 = data3['University Name'].iloc[4]
-    No5 = data3['University Name'].iloc[5]
+    No1 = data3['University Name'].iloc[0]
+    No2 = data3['University Name'].iloc[1]
+    No3 = data3['University Name'].iloc[2]
+    No4 = data3['University Name'].iloc[3]
+    No5 = data3['University Name'].iloc[4]
     
     #speech2 = "1.george mason university" + degree + major + state 
     speech = "the top 5 university for you:" + '          ' +\
