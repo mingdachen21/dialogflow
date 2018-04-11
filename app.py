@@ -119,7 +119,8 @@ def processRequest(req):
         return res
     return {}
 ###########################################
-#def makeWebhookCollage_sport(req):
+""""
+def makeWebhookCollage_sport(req):
     result = req.get("result")
     parameters = result.get("parameters")
     Sport = parameters.get("Sport")
@@ -130,7 +131,7 @@ def processRequest(req):
     data2 = data1.groupby(['Sport']).get_group(Sport)
     data3 = data2.sort_values(by = [Gender])
     while True:
-        try:
+       try:
             No1 = data3['University'].iloc[0]
             pass    
         except IndexError :
@@ -163,7 +164,7 @@ def processRequest(req):
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
     }
-
+""""
 #########################################
 def makeWebhookCollage(req):
     result = req.get("result")
@@ -177,11 +178,11 @@ def makeWebhookCollage(req):
     data1 = data.groupby(['state']).get_group(state)
     data2 = data1.groupby(['degree']).get_group(degree)
     data3 = data2.sort_values(by = [major])
-    No1 = data3['University Name'].iloc[0]
-    No2 = data3['University Name'].iloc[1]
-    No3 = data3['University Name'].iloc[2]
-    No4 = data3['University Name'].iloc[3]
-    No5 = data3['University Name'].iloc[4]
+    No1 = data3['University Name'].iloc[1]
+    No2 = data3['University Name'].iloc[2]
+    No3 = data3['University Name'].iloc[3]
+    No4 = data3['University Name'].iloc[4]
+    No5 = data3['University Name'].iloc[5]
     
     #speech2 = "1.george mason university" + degree + major + state 
     speech = "the top 5 university for you:" + '          ' +\
