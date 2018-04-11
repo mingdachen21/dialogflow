@@ -131,7 +131,11 @@ def makeWebhookCollage_sport(req):
     data3 = data2.sort_values(by = [Gender])
     No1 = data3['University'].iloc[0]
     No2 = data3['University'].iloc[1]
+    if No2 is None:
+        return {}
     No3 = data3['University'].iloc[2]
+    if No3 is None:
+        return {}
     speech = State+Sport+Gender
     return {
        "speech":  speech ,
