@@ -154,11 +154,15 @@ def makeWebhookCollage(req):
     data = data_final
     if state == 'nowhere':
         data1 = data 
-    else: data1 = data.groupby(['State']).get_group(state)
+    else: 
+        data1 = data.groupby(['State']).get_group(state)
     if degree == 'Phd':
         data2 = data1.groupby(['Degree (Phd)']).get_group(1)
-    else: data2=data1
+    else: 
+        data2=data1
     data3 = data2.sort_values(by = [major])
+    if data_final is none:
+        No5 = 'there is no data in side'
     
     No1 = data3['University Name'].iloc[0]
     No2 = data3['University Name'].iloc[1]
@@ -175,8 +179,8 @@ def makeWebhookCollage(req):
          "5." + No5
     print(speech)
     return {
-       "speech":  speech ,
-       "displayText": No1,
+       "speech":  'speech' ,
+       "displayText": No5,
        # "data": data,
        # "contextOut": [],
        "source": "apiai-weather-webhook-sample"
