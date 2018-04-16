@@ -89,7 +89,7 @@ data_Sport = pd.DataFrame({'Sport' : Sport,
                    'Women': Women
                 })
 ########################################################################################################
-final_data = pd.read_csv("final_data.csv",header = 0)
+data_final = pd.read_csv("final_data.csv",header = 0)
 #########################################################################################################
 def processRequest(req):
     if req.get("result").get("action") == "yahooWeatherForecast":
@@ -150,10 +150,16 @@ def makeWebhookCollage(req):
     state = parameters.get("state")
     #if city is None:
         #return None
-    data = final_data
-    data1 = data.groupby(['state']).get_group(state)
-    data2 = data1.groupby(['degree']).get_group(degree)
+    
+    data = data_final
+    if state == 'nowhere':
+        data1 = data 
+    else: data1 = data.groupby(['State']).get_group(state)
+    if degree == 'Phd':
+        data2 = data1.groupby(['Degree (Phd)']).get_group(1)
+    else: data2=data1
     data3 = data2.sort_values(by = [major])
+    
     No1 = data3['University Name'].iloc[0]
     No2 = data3['University Name'].iloc[1]
     No3 = data3['University Name'].iloc[2]
