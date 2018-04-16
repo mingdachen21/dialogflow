@@ -154,7 +154,7 @@ def makeWebhookCollage(req):
         #return None
     
     data = data_collage
-    if state == 'nowhere':
+    if state == 'US':
         data1 = data 
     else: 
         data1 = data.groupby(['state']).get_group(state)
