@@ -130,6 +130,9 @@ def processRequest(req):
     elif req.get("result").get("action") == "Sport_collage":
         res = makeWebhookCollage_sport(req)
         return res
+    elif req.get("result").get("action") == "infornation_university":
+        res = information_university(req)
+        return res
     return {}
 ########################################
 def information_university(req):
