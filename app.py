@@ -144,7 +144,7 @@ def information_university(req):
     state = data1['state'].iloc[0]
     cost = data1['cost'].iloc[0]
     average = data1['Average Financial Aid'].iloc[0]
-    speech = 'The '+ university+'locate in ' +state + "and the average cost:" + cost + ";" + "the Average Financial Aid is " + average 
+    speech = 'The ['+ university+'] is locate in ' +state + ". The average cost:" + cost + ";    The Average Financial Aid: " + average 
     return {
        "speech":  speech ,
        "displayText": speech,
