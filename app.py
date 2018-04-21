@@ -151,9 +151,10 @@ def information_university(req):
     rate = data1['Rate'].iloc[0]
     URL = data1['URL'].iloc[0]
     
-    speech = 'The ['+ university+'] is locate in ' +state + ". The Url:" + URL+\
-    ". The Academic Rate:" + rate + ";    The Average in-sate tuition: " + instate +\
-    ".  The Average out-state tuition: " +outstate
+    speech = 'The ['+ university+'] is locate in ' +state + ". The Office Website is :" + URL+\
+    ". The Academic Rate:" + str(rate*100)+"%" + ";    The Average in-sate tuition: $" + str(instate) +\
+    ".  The Average out-state tuition: $" + str(outstate)
+
     return {
        "speech":  speech ,
        "displayText": speech,
